@@ -14,8 +14,10 @@
 <!-- SUBNAV -->
 <nav class="brand-subnav">
   <div class="subnav-logo">
+    <svg class="cp-nav-icon" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.5 1L1 11.5h6.5L5.5 19 14 8.5H7.5z" fill="#D50032"/></svg>
     <span class="footer-logo-text">CyberPower</span>
   </div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation"><span></span><span></span><span></span></button>
   <ul class="subnav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="ups.html" class="active">UPS Systems</a></li>
@@ -113,11 +115,9 @@
           alt="CyberPower OL750RTHD"
         >
       </div>
-      <div class="cp-card-body" style="padding-bottom:60px; position:relative;">
+      <div class="cp-card-body">
         <h3>OL750RTHD</h3>
         <p>750VA / 675W · Rack/Tower · Hot-swap batteries · 6 NEMA 5-20R outlets · MSRP $1,600</p>
-        <span class="cp-card-buy">Add to Cart</span>
-        <a href="ups.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
 
@@ -128,11 +128,9 @@
           alt="CyberPower OL1000RTXL2U"
         >
       </div>
-      <div class="cp-card-body" style="padding-bottom:60px; position:relative;">
+      <div class="cp-card-body">
         <h3>OL1000RTXL2U</h3>
         <p>1000VA / 700W · 2U Rackmount · Extended runtime · 8 outlets · MSRP $1,235</p>
-        <span class="cp-card-buy">Add to Cart</span>
-        <a href="ups.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
 
@@ -143,11 +141,9 @@
           alt="CyberPower OL1KRTHD"
         >
       </div>
-      <div class="cp-card-body" style="padding-bottom:60px; position:relative;">
+      <div class="cp-card-body">
         <h3>OL1KRTHD</h3>
         <p>1000VA / 900W · Rack/Tower Convertible · Hot-swap · LCD display · MSRP $1,800</p>
-        <span class="cp-card-buy">Add to Cart</span>
-        <a href="ups.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
 
@@ -158,11 +154,9 @@
           alt="CyberPower OL1500RTXL2U"
         >
       </div>
-      <div class="cp-card-body" style="padding-bottom:60px; position:relative;">
+      <div class="cp-card-body">
         <h3>OL1500RTXL2U</h3>
         <p>1500VA / 1050W · 2U Rackmount · Extended runtime · 8 outlets · MSRP $1,600</p>
-        <span class="cp-card-buy">Add to Cart</span>
-        <a href="ups.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
 
@@ -173,11 +167,9 @@
           alt="CyberPower OL2200RTXL2U"
         >
       </div>
-      <div class="cp-card-body" style="padding-bottom:60px; position:relative;">
+      <div class="cp-card-body">
         <h3>OL2200RTXL2U</h3>
         <p>2200VA / 1540W · 2U Rackmount · CAN bus · Dual input voltage · MSRP $2,500</p>
-        <span class="cp-card-buy">Add to Cart</span>
-        <a href="ups.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
 
@@ -188,11 +180,9 @@
           alt="CyberPower OL3KRTHD"
         >
       </div>
-      <div class="cp-card-body" style="padding-bottom:60px; position:relative;">
+      <div class="cp-card-body">
         <h3>OL3KRTHD</h3>
         <p>3000VA / 2700W · Rack/Tower · High-density · Network card ready · MSRP $5,350</p>
-        <span class="cp-card-buy">Add to Cart</span>
-        <a href="ups.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
   </div>
@@ -373,7 +363,7 @@
 <div class="cta-footer">
   <div class="cta-footer-copy">
     <h2>Find the Right UPS for Your Load</h2>
-    <p>Use the CyberPower UPS Product Selector to match your VA requirements, runtime needs, and form factor.</p>
+    <p>From 550VA standby units to 3kVA online double-conversion — explore the full CyberPower UPS lineup, available on Amazon.</p>
   </div>
   <a href="index.html" class="btn-white">View All Products</a>
 </div>
@@ -382,8 +372,11 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <span class="footer-logo-text">CyberPower</span>
-      <p>Professional-grade power protection equipment with a commitment to a full range of power management products and solutions. Available on Amazon.</p>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg class="cp-nav-icon" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.5 1L1 11.5h6.5L5.5 19 14 8.5H7.5z" fill="#D50032"/></svg>
+        <span class="footer-logo-text">CyberPower</span>
+      </div>
+      <p>CyberPower protects critical electronics — from home offices to enterprise data centers — with professional-grade UPS systems, PDUs, and surge protectors. Available on Amazon.</p>
     </div>
     <div class="footer-col">
       <h4>UPS Series</h4>
@@ -421,5 +414,13 @@
   </div>
 </footer>
 
+<script>
+  var btn = document.getElementById('navHamburger');
+  var nav = document.querySelector('.subnav-links');
+  btn.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    btn.classList.toggle('active');
+  });
+</script>
 </body>
 </html>

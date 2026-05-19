@@ -14,8 +14,10 @@
 <!-- SUBNAV -->
 <nav class="brand-subnav">
   <div class="subnav-logo">
+    <svg class="cp-nav-icon" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.5 1L1 11.5h6.5L5.5 19 14 8.5H7.5z" fill="#D50032"/></svg>
     <span class="footer-logo-text">CyberPower</span>
   </div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation"><span></span><span></span><span></span></button>
   <ul class="subnav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="ups.html">UPS Systems</a></li>
@@ -117,7 +119,6 @@
       <div class="cp-card-body" style="padding-bottom:60px; position:relative;">
         <h3>GX Series Surge</h3>
         <p>Up to 3020 joules · 8–12 AC outlets · 4 USB-A + 1 USB-C ports · EMI/RFI noise filtering · Cord lengths to 8 ft · Ideal for gaming and streaming setups</p>
-        <span class="cp-card-buy">Add to Cart</span>
         <a href="surge.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
@@ -171,7 +172,6 @@
       <div class="cp-card-body" style="padding-bottom:60px; position:relative;">
         <h3>Energy-Saving Power Strip</h3>
         <p>Master + controlled outlet layout · Automatic load sensing · 900–1500 joules protection · EMI/RFI filtering · USB charging · 6–12 outlets</p>
-        <span class="cp-card-buy">Add to Cart</span>
         <a href="surge.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
@@ -187,7 +187,6 @@
       <div class="cp-card-body" style="padding-bottom:60px; position:relative;">
         <h3>Home Theater Surge</h3>
         <p>Designed for AV equipment racks — coaxial, phone line, and Ethernet surge protection · 6–12 AC outlets · Up to 3020 joules · Flat-plug design for tight spaces</p>
-        <span class="cp-card-buy">Add to Cart</span>
         <a href="surge.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
@@ -227,7 +226,6 @@
       <div class="cp-card-body" style="padding-bottom:60px; position:relative;">
         <h3>Rackbar Surge PDU</h3>
         <p>1U horizontal rackmount · 8–20 NEMA outlets · 15A or 20A input · EMI/RFI noise filtering · Surge energy rating to 1080 joules · Pairs with any CyberPower UPS</p>
-        <span class="cp-card-buy">Add to Cart</span>
         <a href="pdu.html" class="cp-card-nav">See PDUs</a>
       </div>
     </div>
@@ -247,8 +245,11 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <span class="footer-logo-text">CyberPower</span>
-      <p>Professional-grade power protection equipment with a commitment to a full range of power management products and solutions. Available on Amazon.</p>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg class="cp-nav-icon" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.5 1L1 11.5h6.5L5.5 19 14 8.5H7.5z" fill="#D50032"/></svg>
+        <span class="footer-logo-text">CyberPower</span>
+      </div>
+      <p>CyberPower protects critical electronics — from home offices to enterprise data centers — with professional-grade UPS systems, PDUs, and surge protectors. Available on Amazon.</p>
     </div>
     <div class="footer-col">
       <h4>Surge Series</h4>
@@ -285,5 +286,13 @@
   </div>
 </footer>
 
+<script>
+  var btn = document.getElementById('navHamburger');
+  var nav = document.querySelector('.subnav-links');
+  btn.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    btn.classList.toggle('active');
+  });
+</script>
 </body>
 </html>

@@ -14,8 +14,10 @@
 <!-- SUBNAV -->
 <nav class="brand-subnav">
   <div class="subnav-logo">
+    <svg class="cp-nav-icon" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.5 1L1 11.5h6.5L5.5 19 14 8.5H7.5z" fill="#D50032"/></svg>
     <span class="footer-logo-text">CyberPower</span>
   </div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation"><span></span><span></span><span></span></button>
   <ul class="subnav-links">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="ups.html">UPS Systems</a></li>
@@ -106,22 +108,22 @@
   <p class="section-sub">From single-outlet surge protection to 3-phase online UPS systems, every CyberPower product is engineered to protect critical loads and keep operations running.</p>
 
   <div class="category-grid">
-    <div class="cat-tile">
+    <a href="ups.html" class="cat-tile">
       <img src="https://www.cyberpowersystems.com/wp-content/uploads/2022/08/ol5krthd-r-1-320x320-4x.png" alt="UPS Systems">
       <div class="cat-tile-label"><span>UPS Systems</span></div>
-    </div>
-    <div class="cat-tile">
+    </a>
+    <a href="pdu.html" class="cat-tile">
       <img src="https://www.cyberpowersystems.com/wp-content/uploads/2022/08/pdu-pdu15b6f12r-fr-320x320-4x.png" alt="PDUs">
       <div class="cat-tile-label"><span>PDUs</span></div>
-    </div>
-    <div class="cat-tile">
+    </a>
+    <a href="surge.html" class="cat-tile">
       <img src="https://www.cyberpowersystems.com/wp-content/uploads/2022/08/surge-ht1206uc2-r-320x320-4x.png" alt="Surge Protectors">
       <div class="cat-tile-label"><span>Surge Protectors</span></div>
-    </div>
-    <div class="cat-tile">
-      <img src="https://www.cyberpowersystems.com/wp-content/uploads/2022/08/telecom-csn-30u12v-20-r320x320-4x.png" alt="FTTx Telecom">
-      <div class="cat-tile-label"><span>FTTx Telecom</span></div>
-    </div>
+    </a>
+    <a href="solutions.html" class="cat-tile">
+      <img src="https://www.cyberpowersystems.com/wp-content/uploads/2022/08/New-Web-Smart-App-Online-1480x760-1.png" alt="Solutions by Industry">
+      <div class="cat-tile-label"><span>Solutions</span></div>
+    </a>
   </div>
 </section>
 
@@ -175,8 +177,6 @@
       <div class="cp-card-body">
         <h3>OL1000RTXL2U</h3>
         <p>1000VA / 700W Smart App Online UPS — 2U rackmount with 6 outlets and network connectivity</p>
-        <span class="cp-card-buy">Add to Cart</span>
-        <a href="ups.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
 
@@ -191,8 +191,6 @@
       <div class="cp-card-body">
         <h3>OL1500RTXL2U</h3>
         <p>1500VA / 1050W Smart App Online UPS — extended runtime, 8 outlets, hot-swappable batteries</p>
-        <span class="cp-card-buy">Add to Cart</span>
-        <a href="ups.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
 
@@ -207,8 +205,6 @@
       <div class="cp-card-body">
         <h3>OL2200RTXL2U</h3>
         <p>2200VA / 1540W Smart App Online UPS — dual input/output voltage, 8 outlets, CAN bus</p>
-        <span class="cp-card-buy">Add to Cart</span>
-        <a href="ups.html" class="cp-card-nav">See Products</a>
       </div>
     </div>
   </div>
@@ -339,8 +335,11 @@
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <span class="footer-logo-text">CyberPower</span>
-      <p>Professional-grade power protection equipment with a commitment to a full range of power management products and solutions. Available on Amazon.</p>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg class="cp-nav-icon" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.5 1L1 11.5h6.5L5.5 19 14 8.5H7.5z" fill="#D50032"/></svg>
+        <span class="footer-logo-text">CyberPower</span>
+      </div>
+      <p>CyberPower protects critical electronics — from home offices to enterprise data centers — with professional-grade UPS systems, PDUs, and surge protectors. Available on Amazon.</p>
     </div>
     <div class="footer-col">
       <h4>Products</h4>
@@ -378,5 +377,13 @@
   </div>
 </footer>
 
+<script>
+  var btn = document.getElementById('navHamburger');
+  var nav = document.querySelector('.subnav-links');
+  btn.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    btn.classList.toggle('active');
+  });
+</script>
 </body>
 </html>

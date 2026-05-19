@@ -452,19 +452,6 @@ a { text-decoration: none; color: inherit; }
 }
 .cp-card-nav:hover { background: var(--cp-red-dark); }
 
-/* Add to Cart button — Amazon style */
-.cp-card-buy {
-  display: inline-block;
-  background: #FFD814;
-  border: 1px solid #FCD200;
-  border-radius: var(--radius-ui);
-  color: #0F1111;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 7px 16px;
-  cursor: default;
-  margin-top: 8px;
-}
 
 /* ── CATEGORY GRID (4-col) ── */
 .category-grid {
@@ -483,6 +470,7 @@ a { text-decoration: none; color: inherit; }
   align-items: flex-end;
   transition: transform 0.2s;
   cursor: pointer;
+  text-decoration: none;
 }
 .cat-tile:hover { transform: scale(1.02); }
 
@@ -759,6 +747,7 @@ a { text-decoration: none; color: inherit; }
   max-width: 500px;
   border-radius: var(--radius-tile);
   object-fit: cover;
+  mix-blend-mode: multiply;
 }
 
 /* ── DATA-VIZ TILE ── */
@@ -820,10 +809,53 @@ a { text-decoration: none; color: inherit; }
   .product-grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ── LOGO ICON ── */
+.cp-nav-icon { width: 16px; height: 20px; flex-shrink: 0; }
+
+/* ── HAMBURGER ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: auto;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
 @media (max-width: 768px) {
   .brand-subnav { padding: 0 20px; }
-  .subnav-links { gap: 2px; }
-  .subnav-links a { font-size: 12px; padding: 4px 10px; }
+  .nav-hamburger { display: flex; }
+
+  .subnav-links {
+    display: none;
+    position: fixed;
+    top: 48px;
+    left: 0;
+    right: 0;
+    background: var(--cp-black);
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+    border-bottom: 2px solid var(--cp-red);
+    z-index: 99;
+    list-style: none;
+  }
+  .subnav-links.open { display: flex; }
+  .subnav-links li { width: 100%; }
+  .subnav-links a { display: block; padding: 12px 24px; border-radius: 0; font-size: 14px; }
 
   .hero { grid-template-columns: 1fr; padding: 48px 24px; min-height: auto; }
   .hero-image { display: none; }
