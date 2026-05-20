@@ -275,7 +275,7 @@ a { text-decoration: none; color: inherit; }
 .split-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 400px;
+  min-height: 420px;
   border-radius: var(--radius-tile);
   overflow: hidden;
   margin: 0 40px 24px;
@@ -304,14 +304,13 @@ a { text-decoration: none; color: inherit; }
 
 .split-light {
   background: var(--cp-grey);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
   position: relative;
 }
 
 .split-light img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -418,7 +417,7 @@ a { text-decoration: none; color: inherit; }
   position: relative;
 }
 
-.cp-card-dark .cp-card-body { padding-bottom: 60px; }
+/* padding-bottom only via inline style on cards that have a .cp-card-nav button */
 
 .cp-card-body h3 {
   font-size: 15px;
