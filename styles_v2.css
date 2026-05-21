@@ -1370,19 +1370,7 @@ p  { margin-bottom: 0; line-height: 1.65; }
   .hero-feat-item:last-child { border-bottom: none; }
 }
 
-/* 19. Scroll-fade animation
-   Only sections marked .will-fade (added by JS after below-fold check)
-   start invisible. Sections already in the viewport on load are never hidden.
-   ============================================================ */
-.section-fade.will-fade {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.section-fade.will-fade.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* 19. Scroll-fade animation — removed (caused invisible sections in partial-load setup) */
 
 /* 20. Miscellaneous premium details
    ============================================================ */

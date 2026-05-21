@@ -21,7 +21,6 @@ async function loadPartials() {
   initActiveNav();
   initSmoothScroll();
   initNavDropdowns();
-  initScrollFade();
 }
 
 function initMobileNav() {
@@ -76,29 +75,6 @@ function initSmoothScroll() {
         if (drawer) drawer.classList.remove('open');
       }
     });
-  });
-}
-
-function initScrollFade() {
-  var viewportH = window.innerHeight;
-
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
-
-  document.querySelectorAll('.section-fade').forEach(function(el) {
-    var rect = el.getBoundingClientRect();
-    // Only animate elements that start below the visible viewport
-    if (rect.top > viewportH) {
-      el.classList.add('will-fade');
-      observer.observe(el);
-    }
-    // Elements already in view on load: leave visible (no animation needed)
   });
 }
 
