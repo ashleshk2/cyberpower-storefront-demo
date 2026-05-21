@@ -79,15 +79,18 @@ function initSmoothScroll() {
 }
 
 function initScrollFade() {
+  // Add js-ready to <html> so the CSS opacity:0 rule activates
+  // only when JS is running (prevents blank page on slow/no-JS)
+  document.documentElement.classList.add('js-ready');
+
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Once visible, no need to keep observing
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.section-fade').forEach(function(el) {
     observer.observe(el);

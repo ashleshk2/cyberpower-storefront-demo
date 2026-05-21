@@ -1372,12 +1372,12 @@ p  { margin-bottom: 0; line-height: 1.65; }
 
 /* 19. Scroll-fade animation
    ============================================================ */
-.section-fade {
+.js-ready .section-fade {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.55s ease, transform 0.55s ease;
 }
-.section-fade.visible {
+.js-ready .section-fade.visible {
   opacity: 1;
   transform: translateY(0);
 }
