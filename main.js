@@ -21,6 +21,7 @@ async function loadPartials() {
   initActiveNav();
   initSmoothScroll();
   initNavDropdowns();
+  initScrollFade();
 }
 
 function initMobileNav() {
@@ -103,5 +104,4 @@ function initScrollFade() {
 
 document.addEventListener('DOMContentLoaded', function() {
   loadPartials();
-  initScrollFade();
 });
