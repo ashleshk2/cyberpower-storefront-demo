@@ -79,9 +79,7 @@ function initSmoothScroll() {
 }
 
 function initScrollFade() {
-  // Add js-ready to <html> so the CSS opacity:0 rule activates
-  // only when JS is running (prevents blank page on slow/no-JS)
-  document.documentElement.classList.add('js-ready');
+  var viewportH = window.innerHeight;
 
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
@@ -90,10 +88,16 @@ function initScrollFade() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
 
   document.querySelectorAll('.section-fade').forEach(function(el) {
-    observer.observe(el);
+    var rect = el.getBoundingClientRect();
+    // Only animate elements that start below the visible viewport
+    if (rect.top > viewportH) {
+      el.classList.add('will-fade');
+      observer.observe(el);
+    }
+    // Elements already in view on load: leave visible (no animation needed)
   });
 }
 

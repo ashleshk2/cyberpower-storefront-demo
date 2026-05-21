@@ -1371,13 +1371,15 @@ p  { margin-bottom: 0; line-height: 1.65; }
 }
 
 /* 19. Scroll-fade animation
+   Only sections marked .will-fade (added by JS after below-fold check)
+   start invisible. Sections already in the viewport on load are never hidden.
    ============================================================ */
-.js-ready .section-fade {
+.section-fade.will-fade {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.js-ready .section-fade.visible {
+.section-fade.will-fade.visible {
   opacity: 1;
   transform: translateY(0);
 }
