@@ -78,6 +78,23 @@ function initSmoothScroll() {
   });
 }
 
+function initScrollFade() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Once visible, no need to keep observing
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.section-fade').forEach(function(el) {
+    observer.observe(el);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   loadPartials();
+  initScrollFade();
 });
